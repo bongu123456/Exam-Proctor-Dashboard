@@ -2,6 +2,11 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const AuthContext = createContext(null);
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? '' 
+    : 'https://exam-proctor-dashboard.onrender.com');
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -22,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -46,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password, role = 'student') => {
     setLoading(true);
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password, role })
@@ -97,7 +102,8 @@ export const AuthProvider = ({ children }) => {
     };
 
     try {
-      const response = await fetch(url, config);
+      const targetUrl = url.startsWith('http') ? url : `${API_BASE_URL}${url}`;
+      const response = await fetch(targetUrl, config);
       if (response.status === 401) {
         // Token expired/invalid, trigger logout
         logout();
