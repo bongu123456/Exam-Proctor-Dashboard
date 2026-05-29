@@ -56,14 +56,15 @@ const Navbar = () => {
           background: transparent;
           border: none;
           color: var(--text-muted);
-          width: 36px;
-          height: 36px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
           transition: all 0.2s;
+          position: relative;
         }
         .icon-btn:hover {
           color: var(--text-main);
@@ -72,8 +73,8 @@ const Navbar = () => {
         .profile-trigger {
           display: flex;
           align-items: center;
-          gap: 10px;
-          padding: 4px 10px 4px 4px;
+          gap: 8px;
+          padding: 3px 8px 3px 3px;
           border-radius: 30px;
           border: 1px solid transparent;
           cursor: pointer;
@@ -81,7 +82,7 @@ const Navbar = () => {
           background: transparent;
         }
         .profile-trigger:hover, .profile-trigger.active {
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.06);
           border-color: rgba(255, 255, 255, 0.1);
         }
       `}</style>
@@ -93,7 +94,7 @@ const Navbar = () => {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        padding: '10px 24px',
+        padding: '8px 20px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -133,12 +134,13 @@ const Navbar = () => {
         {/* Right Section: Icons & Profile */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
             <button className="icon-btn">
-              <Bell size={18} />
+              <Bell size={16} />
+              <span style={{ position: 'absolute', top: '5px', right: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#6366f1', border: '1.5px solid var(--bg-primary)' }}></span>
             </button>
             <button className="icon-btn">
-              <Settings size={18} />
+              <Settings size={16} />
             </button>
           </div>
 
@@ -151,8 +153,8 @@ const Navbar = () => {
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
               <div style={{
-                width: '32px',
-                height: '32px',
+                width: '30px',
+                height: '30px',
                 borderRadius: '50%',
                 background: isAdmin ? 'linear-gradient(135deg, #ef4444, #ec4899)' : 'linear-gradient(135deg, var(--color-primary), var(--color-accent))',
                 display: 'flex',
@@ -160,8 +162,8 @@ const Navbar = () => {
                 justifyContent: 'center',
                 color: '#ffffff',
                 fontWeight: 700,
-                fontSize: '13px',
-                boxShadow: isAdmin ? '0 0 12px rgba(239, 68, 68, 0.35)' : '0 0 12px rgba(99, 102, 241, 0.35)'
+                fontSize: '12px',
+                flexShrink: 0
               }}>
                 {user.name.charAt(0).toUpperCase()}
               </div>
@@ -177,20 +179,44 @@ const Navbar = () => {
             {/* Dropdown Menu */}
             {dropdownOpen && (
               <div className="dropdown-menu">
+                <div className="dropdown-header">
+                  <div style={{
+                    width: '34px',
+                    height: '34px',
+                    borderRadius: '50%',
+                    background: isAdmin ? 'linear-gradient(135deg, #ef4444, #ec4899)' : 'linear-gradient(135deg, var(--color-primary), var(--color-accent))',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#ffffff',
+                    fontWeight: 700,
+                    fontSize: '13px',
+                    flexShrink: 0
+                  }}>
+                    {user.name.charAt(0).toUpperCase()}
+                  </div>
+                  <div className="dropdown-header-info">
+                    <span className="dropdown-header-name">{user.name}</span>
+                    <span className="dropdown-header-email" style={{ textTransform: 'capitalize' }}>{user.role} Account</span>
+                  </div>
+                </div>
+                
+                <div className="dropdown-divider"></div>
+
                 <button className="dropdown-item" onClick={() => setDropdownOpen(false)}>
-                  <UserIcon size={16} /> View Profile
+                  <UserIcon size={15} /> View Profile
                 </button>
                 <button className="dropdown-item" onClick={() => setDropdownOpen(false)}>
-                  <Settings size={16} /> Preferences
+                  <Settings size={15} /> Settings
                 </button>
                 <button className="dropdown-item" onClick={() => setDropdownOpen(false)}>
-                  <HelpCircle size={16} /> Help & Support
+                  <HelpCircle size={15} /> Help
                 </button>
                 
                 <div className="dropdown-divider"></div>
                 
                 <button className="dropdown-item danger" onClick={handleLogout}>
-                  <LogOut size={16} /> Sign Out
+                  <LogOut size={15} /> Sign Out
                 </button>
               </div>
             )}
