@@ -360,7 +360,7 @@ const ExamSession = () => {
         <div style={{
           width: '40px',
           height: '40px',
-          border: '3px solid rgba(0,0,0,0.05)',
+          border: '3px solid rgba(255, 255, 255,0.05)',
           borderTopColor: '#7c3aed',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite'
@@ -450,7 +450,7 @@ const ExamSession = () => {
           alignItems: 'center',
           gap: '12px',
           backdropFilter: 'blur(8px)',
-          border: '1px solid rgba(0,0,0,0.2)'
+          border: '1px solid rgba(255, 255, 255,0.2)'
         }}>
           <AlertTriangle size={20} />
           <span>{warningMessage}</span>
@@ -509,8 +509,8 @@ const ExamSession = () => {
               gap: '10px',
               padding: '8px 18px',
               borderRadius: '20px',
-              background: timeLeft < 60 ? 'rgba(239, 68, 68, 0.15)' : 'rgba(0,0,0,0.03)',
-              border: `1px solid ${timeLeft < 60 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(0,0,0,0.06)'}`,
+              background: timeLeft < 60 ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 255, 255,0.03)',
+              border: `1px solid ${timeLeft < 60 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(255, 255, 255,0.06)'}`,
               color: timeLeft < 60 ? '#ef4444' : '#ffffff',
               fontWeight: 700,
               fontSize: '16px',
@@ -546,8 +546,8 @@ const ExamSession = () => {
                         padding: '16px 20px',
                         borderRadius: '12px',
                         cursor: 'pointer',
-                        background: isSelected ? 'rgba(124, 58, 237, 0.1)' : 'rgba(0,0,0, 0.02)',
-                        border: `1px solid ${isSelected ? '#7c3aed' : 'rgba(0,0,0, 0.06)'}`,
+                        background: isSelected ? 'rgba(124, 58, 237, 0.1)' : 'rgba(255, 255, 255, 0.02)',
+                        border: `1px solid ${isSelected ? '#7c3aed' : 'rgba(255, 255, 255, 0.06)'}`,
                         color: isSelected ? '#ffffff' : '#e5e7eb',
                         fontWeight: isSelected ? 600 : 500,
                         transition: 'all 0.2s'
@@ -573,7 +573,7 @@ const ExamSession = () => {
             </div>
 
             {/* Navigation Footer */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '32px', paddingTop: '20px', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '32px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255,0.05)' }}>
               <button 
                 onClick={() => setCurrentIdx(prev => Math.max(0, prev - 1))}
                 className="btn btn-secondary"
@@ -613,8 +613,8 @@ const ExamSession = () => {
                 const isAnswered = answers[qIndex] !== undefined;
                 const isCurrent = qIndex === currentIdx;
 
-                let btnBg = 'rgba(0,0,0,0.03)';
-                let btnBorder = 'rgba(0,0,0,0.06)';
+                let btnBg = 'rgba(255, 255, 255,0.03)';
+                let btnBorder = 'rgba(255, 255, 255,0.06)';
                 let btnColor = '#9ca3af';
 
                 if (isAnswered) {
@@ -720,7 +720,7 @@ const ExamSession = () => {
             {/* Visual infraction progress bar */}
             <div style={{
               height: '8px',
-              background: 'rgba(0,0,0,0.05)',
+              background: 'rgba(255, 255, 255,0.05)',
               borderRadius: '10px',
               overflow: 'hidden',
               marginBottom: '10px'
@@ -772,7 +772,7 @@ const ExamSession = () => {
                   return (
                     <div key={idx} style={{
                       padding: '8px 10px',
-                      background: 'rgba(0,0,0,0.01)',
+                      background: 'rgba(255, 255, 255,0.01)',
                       borderLeft: `2px solid ${color}`,
                       borderRadius: '4px'
                     }}>
@@ -817,7 +817,7 @@ const ExamSession = () => {
             <div style={{
               width: '40px',
               height: '40px',
-              border: '3px solid rgba(0,0,0,0.05)',
+              border: '3px solid rgba(255, 255, 255,0.05)',
               borderTopColor: '#ef4444',
               borderRadius: '50%',
               margin: '0 auto 16px',
@@ -839,8 +839,8 @@ const ExamSession = () => {
           transition: all 0.2s;
         }
         .option-hover:hover {
-          background: rgba(0,0,0, 0.05) !important;
-          border-color: rgba(0,0,0,0.12) !important;
+          background: rgba(255, 255, 255, 0.05) !important;
+          border-color: rgba(255, 255, 255,0.12) !important;
         }
       `}</style>
     </div>

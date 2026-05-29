@@ -36,7 +36,7 @@ const SubmissionDetails = () => {
         <div style={{
           width: '40px',
           height: '40px',
-          border: '3px solid rgba(0,0,0,0.05)',
+          border: '3px solid rgba(255, 255, 255,0.05)',
           borderTopColor: '#7c3aed',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite'
@@ -102,7 +102,7 @@ const SubmissionDetails = () => {
       <div className="glass-card" style={{ 
         textAlign: 'center', 
         padding: '48px 32px', 
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01))',
+        background: 'linear-gradient(135deg, rgba(255, 255, 255,0.02), rgba(255, 255, 255,0.01))',
         marginBottom: '40px' 
       }}>
         <div style={{
@@ -134,7 +134,7 @@ const SubmissionDetails = () => {
           display: 'flex', 
           justifyContent: 'center', 
           gap: '40px', 
-          borderTop: '1px solid rgba(0,0,0,0.05)', 
+          borderTop: '1px solid rgba(255, 255, 255,0.05)', 
           paddingTop: '24px',
           maxWidth: '400px',
           margin: '0 auto'
@@ -147,7 +147,7 @@ const SubmissionDetails = () => {
             </div>
           </div>
 
-          <div style={{ width: '1px', background: 'rgba(0,0,0,0.05)' }}></div>
+          <div style={{ width: '1px', background: 'rgba(255, 255, 255,0.05)' }}></div>
 
           <div>
             <span style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Proctor Violations</span>
@@ -237,7 +237,7 @@ const SubmissionDetails = () => {
                           borderRadius: '6px',
                           background: optBg,
                           color: optColor,
-                          border: `1px solid ${optBg !== 'transparent' ? 'rgba(0,0,0,0.02)' : 'transparent'}`,
+                          border: `1px solid ${optBg !== 'transparent' ? 'rgba(255, 255, 255,0.02)' : 'transparent'}`,
                           fontWeight: isPicked || isCorrectOpt ? 600 : 400
                         }}
                       >

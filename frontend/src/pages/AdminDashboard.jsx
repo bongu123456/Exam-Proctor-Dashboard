@@ -90,7 +90,7 @@ const AdminDashboard = () => {
         <div style={{
           width: '40px',
           height: '40px',
-          border: '3px solid rgba(0,0,0,0.05)',
+          border: '3px solid rgba(255, 255, 255,0.05)',
           borderTopColor: '#7c3aed',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite'
@@ -174,8 +174,8 @@ const AdminDashboard = () => {
           display: 'flex', 
           alignItems: 'center', 
           gap: '20px', 
-          borderColor: (stats?.summary.highSuspicionRate || 0) > 15 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(0,0,0,0.06)',
-          background: (stats?.summary.highSuspicionRate || 0) > 15 ? 'linear-gradient(135deg, rgba(239,68,68,0.05), transparent)' : 'rgba(0,0,0,0.03)'
+          borderColor: (stats?.summary.highSuspicionRate || 0) > 15 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(255, 255, 255,0.06)',
+          background: (stats?.summary.highSuspicionRate || 0) > 15 ? 'linear-gradient(135deg, rgba(239,68,68,0.05), transparent)' : 'rgba(255, 255, 255,0.03)'
         }}>
           <div style={{ padding: '12px', borderRadius: '12px', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
             <AlertTriangle size={24} />
@@ -213,7 +213,7 @@ const AdminDashboard = () => {
                   <XAxis dataKey="range" stroke="#6b7280" fontSize={12} tickLine={false} />
                   <YAxis stroke="#6b7280" fontSize={12} tickLine={false} allowDecimals={false} />
                   <Tooltip 
-                    contentStyle={{ background: 'var(--bg-secondary)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '10px' }}
+                    contentStyle={{ background: 'var(--bg-secondary)', border: '1px solid rgba(255, 255, 255,0.08)', borderRadius: '10px' }}
                     labelStyle={{ color: 'var(--text-main)', fontWeight: 700 }}
                   />
                   <Area type="monotone" dataKey="count" name="Submissions" stroke="#7c3aed" strokeWidth={2} fillOpacity={1} fill="url(#scoreColor)" />
@@ -250,7 +250,7 @@ const AdminDashboard = () => {
                       ))}
                     </Pie>
                     <Tooltip 
-                      contentStyle={{ background: 'var(--bg-secondary)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '10px' }}
+                      contentStyle={{ background: 'var(--bg-secondary)', border: '1px solid rgba(255, 255, 255,0.08)', borderRadius: '10px' }}
                     />
                   </PieChart>
                 </ResponsiveContainer>
@@ -399,7 +399,7 @@ const AdminDashboard = () => {
           <div className="modal-content" style={{ maxWidth: '640px', padding: '32px' }}>
             
             {/* Modal Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', borderBottom: '1px solid rgba(0,0,0,0.06)', paddingBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', borderBottom: '1px solid rgba(255, 255, 255,0.06)', paddingBottom: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <ShieldAlert size={22} color="#7c3aed" />
                 <h3 style={{ fontSize: '18px', fontWeight: 800 }}>Student Forensic Record</h3>
@@ -417,7 +417,7 @@ const AdminDashboard = () => {
                 <div style={{
                   width: '30px',
                   height: '30px',
-                  border: '2.5px solid rgba(0,0,0,0.05)',
+                  border: '2.5px solid rgba(255, 255, 255,0.05)',
                   borderTopColor: '#7c3aed',
                   borderRadius: '50%',
                   animation: 'spin 1s linear infinite'
@@ -429,7 +429,7 @@ const AdminDashboard = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   
                   {/* Student Overview Info */}
-                  <div style={{ background: 'rgba(0,0,0,0.01)', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '16px' }}>
+                  <div style={{ background: 'rgba(255, 255, 255,0.01)', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '16px' }}>
                     <h4 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '10px', color: 'var(--text-main)' }}>Session Summary</h4>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '13px' }}>
                       <div><span style={{ color: '#9ca3af' }}>Student:</span> <strong style={{ color: 'var(--text-main)' }}>{detailedData.student?.name}</strong></div>
@@ -452,7 +452,7 @@ const AdminDashboard = () => {
                       border: '1px solid var(--border-glass)',
                       borderRadius: '12px',
                       padding: '14px',
-                      background: 'rgba(0,0,0,0.2)',
+                      background: 'rgba(255, 255, 255,0.2)',
                       display: 'flex',
                       flexDirection: 'column',
                       gap: '10px'
@@ -471,7 +471,7 @@ const AdminDashboard = () => {
                           return (
                             <div key={idx} style={{
                               padding: '10px 12px',
-                              background: 'rgba(0,0,0,0.01)',
+                              background: 'rgba(255, 255, 255,0.01)',
                               borderLeft: `2.5px solid ${color}`,
                               borderRadius: '6px'
                             }}>
@@ -498,7 +498,7 @@ const AdminDashboard = () => {
                       border: '1px solid var(--border-glass)',
                       borderRadius: '12px',
                       padding: '12px 16px',
-                      background: 'rgba(0,0,0,0.1)',
+                      background: 'rgba(255, 255, 255,0.1)',
                       fontSize: '12.5px'
                     }}>
                       {detailedData.exam?.questions.map((q, idx) => {
@@ -510,7 +510,7 @@ const AdminDashboard = () => {
                         return (
                           <div key={idx} style={{
                             padding: '8px 0',
-                            borderBottom: idx < (detailedData.exam.questions.length - 1) ? '1px solid rgba(0,0,0,0.04)' : 'none',
+                            borderBottom: idx < (detailedData.exam.questions.length - 1) ? '1px solid rgba(255, 255, 255,0.04)' : 'none',
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center'
@@ -537,7 +537,7 @@ const AdminDashboard = () => {
               )
             )}
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '24px', borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '24px', borderTop: '1px solid rgba(255, 255, 255,0.06)', paddingTop: '16px' }}>
               <button onClick={() => setSelectedSubmission(null)} className="btn btn-secondary" style={{ padding: '8px 20px' }}>
                 Close Record
               </button>
