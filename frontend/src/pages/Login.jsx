@@ -161,7 +161,7 @@ const Login = () => {
         <div style={{ 
           marginTop: '32px', 
           paddingTop: '20px', 
-          borderTop: '1px solid rgba(255,255,255,0.05)',
+          borderTop: '1px solid rgba(0,0,0,0.05)',
           textAlign: 'center' 
         }}>
           <span style={{ fontSize: '11px', fontWeight: 600, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.05em' }}>

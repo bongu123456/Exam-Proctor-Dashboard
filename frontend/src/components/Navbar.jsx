@@ -35,15 +35,15 @@ const Navbar = () => {
         }
         .nav-link-hover:hover {
           color: #ffffff !important;
-          background: rgba(255, 255, 255, 0.03);
-          border-color: rgba(255, 255, 255, 0.05);
+          background: rgba(0,0,0, 0.03);
+          border-color: rgba(0,0,0, 0.05);
         }
       `}</style>
 
       <nav style={{
         background: 'rgba(10, 11, 16, 0.75)',
         backdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+        borderBottom: '1px solid rgba(0,0,0, 0.06)',
         position: 'sticky',
         top: 0,
         zIndex: 100,
@@ -56,7 +56,7 @@ const Navbar = () => {
         {/* Left Branding */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Shield size={26} color="#a855f7" style={{ filter: 'drop-shadow(0 0 10px rgba(168, 85, 247, 0.6))' }} />
-          <Link to="/" style={{ fontSize: '20px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <Link to="/" style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '4px' }}>
             Proctor<span className="gradient-text">Shield</span>
           </Link>
           <span style={{
@@ -87,7 +87,7 @@ const Navbar = () => {
           <div style={{
             height: '20px',
             width: '1px',
-            background: 'rgba(255, 255, 255, 0.08)'
+            background: 'rgba(0,0,0, 0.08)'
           }}></div>
 
           {/* User Profile Info Card */}
@@ -100,7 +100,7 @@ const Navbar = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#ffffff',
+              color: 'var(--text-main)',
               fontWeight: 700,
               fontSize: '14px',
               boxShadow: isAdmin ? '0 0 12px rgba(239, 68, 68, 0.35)' : '0 0 12px rgba(168, 85, 247, 0.35)'
@@ -108,7 +108,7 @@ const Navbar = () => {
               {user.name.charAt(0).toUpperCase()}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <span style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff' }}>{user.name}</span>
+              <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)' }}>{user.name}</span>
               <span style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'capitalize', marginTop: '1px' }}>{user.role}</span>
             </div>
           </div>

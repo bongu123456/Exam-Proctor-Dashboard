@@ -54,11 +54,11 @@ const StudentDashboard = () => {
 
   if (loading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', color: '#ffffff' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', color: 'var(--text-main)' }}>
         <div style={{
           width: '40px',
           height: '40px',
-          border: '3px solid rgba(255,255,255,0.05)',
+          border: '3px solid var(--border-glass)',
           borderTopColor: '#7c3aed',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite'
@@ -227,18 +227,18 @@ const StudentDashboard = () => {
               <h3 style={{ fontSize: '20px', fontWeight: 800 }}>Proctoring Guidelines</h3>
             </div>
 
-            <p style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, marginBottom: '14px' }}>
+            <p style={{ color: 'var(--text-main)', fontSize: '15px', fontWeight: 600, marginBottom: '14px' }}>
               You are about to start: {selectedExam.title} ({selectedExam.duration} Mins)
             </p>
 
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-              <p style={{ fontSize: '13.5px', color: '#e5e7eb', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+            <div style={{ background: 'rgba(0, 0, 0, 0.02)', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--text-main)', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
                 📷 <span style={{ lineHeight: 1.4 }}><strong>Webcam Access</strong> is mandatory. Your video feed is monitored locally to confirm your presence.</span>
               </p>
-              <p style={{ fontSize: '13.5px', color: '#e5e7eb', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--text-main)', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
                 🚫 <span style={{ lineHeight: 1.4 }}><strong>Tab switching</strong> or minimizing the window will trigger security violations immediately.</span>
               </p>
-              <p style={{ fontSize: '13.5px', color: '#e5e7eb', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+              <p style={{ fontSize: '13.5px', color: 'var(--text-main)', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
                 🔲 <span style={{ lineHeight: 1.4 }}><strong>Fullscreen Mode</strong> is required. Exiting fullscreen will count as a proctoring infraction.</span>
               </p>
               <p style={{ fontSize: '13.5px', color: '#ef4444', display: 'flex', gap: '8px', alignItems: 'flex-start', fontWeight: 600 }}>
